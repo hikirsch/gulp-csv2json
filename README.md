@@ -22,7 +22,7 @@ var rename = require('gulp-rename');
 
 gulp.task('default', function () {
 
-var csvParseOptions = {} //based on options specified here : http://csv.adaltas.com/parse/
+var csvParseOptions = {}; //based on options specified here : http://csv.adaltas.com/parse/
 
 	gulp.src('src/**/*.csv')
 		.pipe(csv2json(csvParseOptions))
