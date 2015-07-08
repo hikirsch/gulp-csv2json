@@ -35,10 +35,10 @@ module.exports = function (options) {
 					return cb(new gutil.PluginError('gulp-csv2json', err));
 				}
 
-				options = options || {};
+				options = options || { delimiter: ',', escape: '"' };
 
 				csv()
-					.from.path(tempFile, { delimiter: ',', escape: '"' })
+					.from.path(tempFile, options)
 					//.to.stream(fs.createWriteStream(config.output))
 					.transform( function(row){
 						row.unshift(row.pop());
