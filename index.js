@@ -7,11 +7,11 @@ var filesize = require('filesize');
 var tempWrite = require('temp-write');
 var csv = require('csv');
 
-var header = []
-	, record = [];
-
 module.exports = function (options) {
 	return map(function (file, cb) {
+		var header = []
+			, record = [];
+
 		if (file.isNull()) {
 			return cb(null, file);
 		}
